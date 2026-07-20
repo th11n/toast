@@ -19,13 +19,13 @@
 
 ## About
 
-Toast is a portfolio project exploring notification UX: clear hierarchy, subtle status gradients, grain, smooth layered motion and an expanding stack.
+Toast is a React notification library with clear hierarchy, subtle status gradients, grain, smooth layered motion and an expanding stack.
 
-It ships as a publishable React package, with a Next.js demo and documentation playground built alongside it.
+Install it from npm with `bun add @dominikkrakowiak/toast framer-motion`, or explore the source package in this repository. A Next.js demo and documentation playground are included alongside the library.
 
 ## Features
 
-- Four semantic states — success, info, warning and error.
+- Four semantic states: success, info, warning and error.
 - Layered stack animation that expands on hover.
 - Shared provider defaults with per-toast overrides.
 - Phosphor, Lucide and React Icons presets.
@@ -37,9 +37,7 @@ It ships as a publishable React package, with a Next.js demo and documentation p
 
 ## Live preview
 
-> Add the production URL here when the project is deployed.
-
-`https://your-domain.com`
+[toast.dominikkrakowiak.com](https://toast.dominikkrakowiak.com)
 
 ## Project structure
 
