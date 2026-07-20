@@ -1,0 +1,33 @@
+{
+  "name": "demo",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "generate:docs": "fumadocs-mdx",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@dominikkrakowiak/toast": "workspace:*",
+    "@types/mdx": "^2.0.13",
+    "clsx": "^2.1.1",
+    "fumadocs-core": "16.10.6",
+    "fumadocs-mdx": "15.2.0",
+    "fumadocs-ui": "16.10.6",
+    "motion": "^12.42.2",
+    "next": "^16.1.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "tailwind-merge": "^3.6.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "tailwindcss": "^4.1.0",
+    "typescript": "^5.7.0"
+  }
+}
