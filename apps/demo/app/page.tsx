@@ -1,6 +1,7 @@
 "use client";
 
 import { ToastProvider, toast } from "@th1n/toast";
+import { useEffect, useState } from "react";
 
 const actions = [
   {
@@ -50,6 +51,25 @@ const actions = [
 ];
 
 export default function Home() {
+  const [githubStars, setGithubStars] = useState<number | null>(null);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    fetch("https://api.github.com/repos/th11n/toast")
+      .then((response) => (response.ok ? response.json() : null))
+      .then((repository) => {
+        if (isMounted && typeof repository?.stargazers_count === "number") {
+          setGithubStars(repository.stargazers_count);
+        }
+      })
+      .catch(() => {});
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
   return (
     <ToastProvider>
       <main className="relative w-full">
@@ -66,7 +86,7 @@ export default function Home() {
           className="pointer-events-none fixed inset-0 z-10 bg-[url('https://www.ui-layouts.com/noise.gif')] opacity-[0.03]"
         />
         <div className="relative z-20 mx-auto flex min-h-screen w-1/2 flex-col items-center justify-center gap-10 text-center">
-          <div className="rounded-xl bg-white/5 px-12 py-24 shadow-sm shadow-white/20">
+          <div className="relative min-h-[34rem] rounded-xl bg-white/5 px-12 py-24 shadow-sm shadow-white/20">
             <div className="space-y-4">
               <p className="text-xs font-medium tracking-[0.2em] text-sky-200/65 uppercase">
                 @th1n/toast
@@ -98,6 +118,42 @@ export default function Home() {
                 </button>
               ))}
             </div>
+            <footer className="absolute right-12 bottom-8 left-12 flex items-center justify-between border-white/10 border-t pt-5 text-sm text-slate-400">
+              <nav
+                aria-label="Footer navigation"
+                className="flex items-center gap-5"
+              >
+                <a className="transition hover:text-sky-200" href="/docs">
+                  Documentation
+                </a>
+                <a
+                  className="transition hover:text-sky-200"
+                  href="https://github.com/th11n/toast"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  GitHub
+                </a>
+              </nav>
+              <a
+                className="inline-flex items-center gap-2 text-xs transition hover:text-sky-200"
+                href="https://github.com/th11n/toast/stargazers"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="size-3.5 shrink-0 text-sky-200"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="m12 2.5 2.94 5.96 6.58.96-4.76 4.64 1.12 6.56L12 17.53l-5.88 3.09 1.12-6.56-4.76-4.64 6.58-.96L12 2.5Z" />
+                </svg>
+                <span className="text-slate-200 tabular-nums">
+                  {githubStars?.toLocaleString() ?? "—"}
+                </span>
+              </a>
+            </footer>
           </div>
         </div>
       </main>

@@ -11,7 +11,9 @@
   <p>
     <a href="https://github.com/th11n/toast">Repository</a>
     ·
-    <a href="#live-preview">Live preview</a>
+    <a href="https://toast.dominikkrakowiak.com">Live preview</a>
+    ·
+    <a href="https://toast.dominikkrakowiak.com/docs">Documentation</a>
   </p>
 </div>
 
@@ -34,17 +36,6 @@ Install it from npm with `bun add @th1n/toast framer-motion`, or explore the sou
 ## Stack
 
 `React` · `TypeScript` · `Framer Motion` · `Next.js` · `Tailwind CSS` · `Fumadocs` · `Bun`
-
-## Live preview
-
-[toast.th1n.com](https://toast.th1n.com)
-
-## Project structure
-
-```text
-apps/demo        Landing page, docs and interactive playground
-packages/toast   Publishable React toast package
-```
 
 ## License
 
