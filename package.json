@@ -12,11 +12,11 @@
   },
   "scripts": {
     "dev": "bun --filter demo dev",
-    "build": "bun --filter @dominikkrakowiak/toast build && bun --filter demo build",
+    "build": "bun --filter @th1n/toast build && bun --filter demo build",
     "lint": "biome check .",
     "format": "biome format --write .",
-    "typecheck": "bun --filter demo generate:docs && bun --filter @dominikkrakowiak/toast typecheck && bun --filter demo typecheck",
-    "test": "bun --filter @dominikkrakowiak/toast test"
+    "typecheck": "bun --filter demo generate:docs && bun --filter @th1n/toast typecheck && bun --filter demo typecheck",
+    "test": "bun --filter @th1n/toast test"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.3.4"

@@ -1,6 +1,6 @@
 {
-  "name": "@dominikkrakowiak/toast",
-  "version": "0.1.0",
+  "name": "@th1n/toast",
+  "version": "0.2.0",
   "description": "A React toast component.",
   "license": "MIT",
   "type": "module",

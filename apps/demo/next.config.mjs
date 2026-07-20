@@ -7,7 +7,7 @@ const appDirectory = path.dirname(fileURLToPath(import.meta.url));
 const config = {
   output: "standalone",
   outputFileTracingRoot: path.join(appDirectory, "../.."),
-  transpilePackages: ["@dominikkrakowiak/toast"],
+  transpilePackages: ["@th1n/toast"],
 };
 
 export default createMDX()(config);

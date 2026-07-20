@@ -5,7 +5,7 @@ import {
   ToastProvider,
   type ToastVariant,
   toast,
-} from "@dominikkrakowiak/toast";
+} from "@th1n/toast";
 import { useMemo, useState } from "react";
 
 const variants: ToastVariant[] = ["success", "info", "warning", "error"];

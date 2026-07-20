@@ -6,7 +6,7 @@ description: Add Toast to a React application.
 ## Install dependencies
 
 ```bash
-bun add @dominikkrakowiak/toast framer-motion
+bun add @th1n/toast framer-motion
 ```
 
 `framer-motion` is a peer dependency, so it must be installed by the consuming app.
@@ -17,7 +17,7 @@ When using Tailwind CSS, include the package source so its utility classes are g
 
 ```css
 @import "tailwindcss";
-@source "../node_modules/@dominikkrakowiak/toast/dist";
+@source "../node_modules/@th1n/toast/dist";
 ```
 
 Adjust the relative path to match the location of your global stylesheet.
@@ -27,7 +27,7 @@ Adjust the relative path to match the location of your global stylesheet.
 Place one provider near your application root. The default position is `top-right`.
 
 ```tsx
-import { ToastProvider } from "@dominikkrakowiak/toast";
+import { ToastProvider } from "@th1n/toast";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return <ToastProvider position="top-right">{children}</ToastProvider>;

@@ -21,7 +21,7 @@
 
 Toast is a React notification library with clear hierarchy, subtle status gradients, grain, smooth layered motion and an expanding stack.
 
-Install it from npm with `bun add @dominikkrakowiak/toast framer-motion`, or explore the source package in this repository. A Next.js demo and documentation playground are included alongside the library.
+Install it from npm with `bun add @th1n/toast framer-motion`, or explore the source package in this repository. A Next.js demo and documentation playground are included alongside the library.
 
 ## Features
 
@@ -37,7 +37,7 @@ Install it from npm with `bun add @dominikkrakowiak/toast framer-motion`, or exp
 
 ## Live preview
 
-[toast.dominikkrakowiak.com](https://toast.dominikkrakowiak.com)
+[toast.th1n.com](https://toast.th1n.com)
 
 ## Project structure
 

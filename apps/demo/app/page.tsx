@@ -1,6 +1,6 @@
 "use client";
 
-import { ToastProvider, toast } from "@dominikkrakowiak/toast";
+import { ToastProvider, toast } from "@th1n/toast";
 
 const actions = [
   {
@@ -53,53 +53,53 @@ export default function Home() {
   return (
     <ToastProvider>
       <main className="relative w-full">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
-      >
-        <div className="absolute -bottom-72 -left-56 size-[42rem] rounded-full bg-cyan-300/35 blur-[150px]" />
-        <div className="absolute -bottom-64 left-[18%] size-[34rem] rounded-full bg-sky-500/30 blur-[145px]" />
-        <div className="absolute -bottom-56 left-[42%] size-[30rem] rounded-full bg-indigo-500/25 blur-[140px]" />
-      </div>
-      <div
-        aria-hidden="true"
-        className="pointer-events-none fixed inset-0 z-10 bg-[url('https://www.ui-layouts.com/noise.gif')] opacity-[0.03]"
-      />
-      <div className="relative z-20 mx-auto flex min-h-screen w-1/2 flex-col items-center justify-center gap-10 text-center">
-        <div className="rounded-xl bg-white/5 px-12 py-24 shadow-sm shadow-white/20">
-          <div className="space-y-4">
-            <p className="text-xs font-medium tracking-[0.2em] text-sky-200/65 uppercase">
-              @dominikkrakowiak/toast
-            </p>
-            <h1 className="max-w-2xl text-5xl font-light tracking-[-0.055em] text-white sm:text-6xl">
-              Modern toast system.
-            </h1>
-            <p className="max-w-lg text-lg leading-8 text-slate-300/80">
-              Minimal feedback with clear status hierarchy and layered motion.
-            </p>
-          </div>
+        <div
+          aria-hidden="true"
+          className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
+        >
+          <div className="absolute -bottom-72 -left-56 size-[42rem] rounded-full bg-cyan-300/35 blur-[150px]" />
+          <div className="absolute -bottom-64 left-[18%] size-[34rem] rounded-full bg-sky-500/30 blur-[145px]" />
+          <div className="absolute -bottom-56 left-[42%] size-[30rem] rounded-full bg-indigo-500/25 blur-[140px]" />
+        </div>
+        <div
+          aria-hidden="true"
+          className="pointer-events-none fixed inset-0 z-10 bg-[url('https://www.ui-layouts.com/noise.gif')] opacity-[0.03]"
+        />
+        <div className="relative z-20 mx-auto flex min-h-screen w-1/2 flex-col items-center justify-center gap-10 text-center">
+          <div className="rounded-xl bg-white/5 px-12 py-24 shadow-sm shadow-white/20">
+            <div className="space-y-4">
+              <p className="text-xs font-medium tracking-[0.2em] text-sky-200/65 uppercase">
+                @th1n/toast
+              </p>
+              <h1 className="max-w-2xl text-5xl font-light tracking-[-0.055em] text-white sm:text-6xl">
+                Modern toast system.
+              </h1>
+              <p className="max-w-lg text-lg leading-8 text-slate-300/80">
+                Minimal feedback with clear status hierarchy and layered motion.
+              </p>
+            </div>
 
-          <div className="relative z-20 mt-10 grid max-w-xl items-start justify-start gap-2 sm:grid-cols-2">
-            {actions.map((action) => (
-              <button
-                className={`flex items-start gap-3 rounded-lg border bg-black/20 px-4 py-3.5 text-left transition duration-200 ease-out hover:text-white focus-visible:ring-2 focus-visible:ring-sky-200/70 focus-visible:outline-none ${action.tone}`}
-                key={action.label}
-                onClick={action.run}
-                type="button"
-              >
-                <span
-                  className={`mt-1.5 size-2 shrink-0 rounded-full ${action.indicator}`}
-                />
-                <span className="min-w-0">
-                  <span className="block text-sm font-medium text-slate-100">
-                    Show {action.label}
+            <div className="relative z-20 mt-10 grid max-w-xl items-start justify-start gap-2 sm:grid-cols-2">
+              {actions.map((action) => (
+                <button
+                  className={`flex items-start gap-3 rounded-lg border bg-black/20 px-4 py-3.5 text-left transition duration-200 ease-out hover:text-white focus-visible:ring-2 focus-visible:ring-sky-200/70 focus-visible:outline-none ${action.tone}`}
+                  key={action.label}
+                  onClick={action.run}
+                  type="button"
+                >
+                  <span
+                    className={`mt-1.5 size-2 shrink-0 rounded-full ${action.indicator}`}
+                  />
+                  <span className="min-w-0">
+                    <span className="block text-sm font-medium text-slate-100">
+                      Show {action.label}
+                    </span>
                   </span>
-                </span>
-              </button>
-            ))}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
       </main>
     </ToastProvider>
   );

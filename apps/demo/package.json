@@ -1,6 +1,6 @@
 {
   "name": "demo",
-  "private": true,
+  "private": false,
   "version": "0.1.0",
   "scripts": {
     "generate:docs": "fumadocs-mdx",
@@ -10,7 +10,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@dominikkrakowiak/toast": "workspace:*",
+    "@th1n/toast": "workspace:*",
     "@types/mdx": "^2.0.13",
     "clsx": "^2.1.1",
     "fumadocs-core": "16.10.6",

@@ -9,7 +9,7 @@ RUN bun install --frozen-lockfile
 
 FROM dependencies AS build
 COPY . .
-RUN bun --filter @dominikkrakowiak/toast build && bun --filter demo build
+RUN bun --filter @th1n/toast build && bun --filter demo build
 
 FROM node:22-alpine AS runtime
 WORKDIR /app
