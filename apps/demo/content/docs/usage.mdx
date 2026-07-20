@@ -1,0 +1,32 @@
+---
+title: Usage
+description: Trigger toasts through the global API.
+---
+
+Import `toast` and call the variant that matches the result of an action.
+
+```tsx
+import { toast } from "@dominikkrakowiak/toast";
+
+toast.success("Project created", {
+  description: "Your new project is ready to use.",
+});
+
+toast.error("Could not publish", {
+  description: "Try again in a moment.",
+});
+```
+
+Available variants are `success`, `info`, `warning` and `error`.
+
+## Stacking behaviour
+
+The newest toast sits at the front of its stack. Up to three toasts are visible; remaining notifications wait in a queue. Hover the stack to expand it and inspect every active notification.
+
+## Dismissal
+
+Toasts close automatically after the configured duration. Set `duration: 0` to keep a notification open until it is dismissed.
+
+```tsx
+toast.info("Deployment is still running", { duration: 0 });
+```
