@@ -1,0 +1,31 @@
+---
+title: Toast
+description: A modern, layered toast system for React.
+---
+
+`@dominikkrakowiak/toast` is a minimal notification library with expressive status styles, smooth stacking motion and sensible defaults.
+
+## What it includes
+
+- Four ready-to-use variants: success, info, warning and error.
+- Layered stack animation that expands on hover.
+- Optional category labels, descriptions, grain and custom icons.
+- A small global API, backed by a React provider.
+
+## Start here
+
+Install the package, add one `ToastProvider` close to the root of your app, then trigger a toast anywhere in its React tree.
+
+```tsx
+import { ToastProvider, toast } from "@dominikkrakowiak/toast";
+
+export function App() {
+  return (
+    <ToastProvider>
+      <button onClick={() => toast.success("Changes saved")}>Save</button>
+    </ToastProvider>
+  );
+}
+```
+
+Use the sidebar for setup and the interactive playground to try every option.
