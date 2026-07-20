@@ -2,6 +2,8 @@
   <h1>Toast</h1>
   <p>A modern, layered toast system for React.</p>
 
+  <img src="apps/demo/public/toast-preview.jpg" alt="Toast preview" width="768" />
+
   <p>
     <a href="https://github.com/th11n/toast/stargazers"><img src="https://img.shields.io/github/stars/th11n/toast?style=for-the-badge&color=bae6fd&labelColor=050708" alt="GitHub stars" /></a>
     <a href="https://github.com/th11n/toast/network/members"><img src="https://img.shields.io/github/forks/th11n/toast?style=for-the-badge&color=bae6fd&labelColor=050708" alt="GitHub forks" /></a>
