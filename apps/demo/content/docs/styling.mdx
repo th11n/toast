@@ -1,0 +1,60 @@
+---
+title: Styling
+description: Adapt Toast to your product without replacing its behaviour.
+---
+
+Toast uses Tailwind utility classes for its card surface. Use `className` for utility-level changes and `style` for values that are easier to express as CSS properties.
+
+## Global card styling
+
+Put shared visual treatment in `defaultOptions`. Every toast inherits it unless its own options replace the value.
+
+```tsx
+<ToastProvider
+  defaultOptions={{
+    className:
+      "rounded-2xl bg-[#151a24] shadow-[0_20px_60px_rgb(0_0_0/0.38)]",
+    style: {
+      border: "1px solid rgb(148 163 184 / 0.12)",
+    },
+  }}
+>
+  {children}
+</ToastProvider>
+```
+
+`className` is merged with the built-in card classes, so conflicting Tailwind utilities such as `rounded-none`, `bg-slate-900` or `px-5` replace the corresponding default utility.
+
+## Styling one toast
+
+Use the same options on any `toast.*` call to create an exception for a single notification.
+
+```tsx
+toast.success("Deployment complete", {
+  className: "bg-emerald-950/90 text-emerald-50",
+  style: {
+    boxShadow: "0 16px 48px rgb(16 185 129 / 0.14)",
+  },
+});
+```
+
+Per-toast `className` and `style` override their `defaultOptions` equivalents.
+
+## Status identity
+
+Keep the card surface neutral and use the existing bottom-right variant gradient, icon set and optional category label to communicate status. For a stronger brand treatment, combine `iconStyle`, a custom `icons` map and a tailored card class.
+
+```tsx
+<ToastProvider
+  iconStyle="lucide"
+  defaultOptions={{
+    className: "bg-[#101722] text-slate-100",
+    grain: true,
+    showCategory: false,
+  }}
+>
+  {children}
+</ToastProvider>
+```
+
+See [Configuration](/docs/configuration) for icons, global defaults and precedence.
