@@ -1,11 +1,11 @@
 {
   "name": "demo",
-  "private": false,
+  "private": true,
   "version": "0.1.0",
   "scripts": {
     "generate:docs": "fumadocs-mdx",
     "dev": "next dev",
-    "build": "next build",
+    "build": "bun run generate:docs && next build",
     "start": "next start",
     "typecheck": "tsc --noEmit"
   },
