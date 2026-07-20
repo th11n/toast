@@ -12,7 +12,7 @@ const figtree = Figtree({
 export const metadata: Metadata = {
   metadataBase: new URL("https://toast.dominikkrakowiak.com"),
   title: {
-    default: "Toast — React toast notifications",
+    default: "Toast - React toast notifications",
     template: "%s | Toast",
   },
   description: "A modern, layered toast notification system for React.",
@@ -32,12 +32,12 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Toast",
-    title: "Toast — React toast notifications",
+    title: "Toast - React toast notifications",
     description: "A modern, layered toast notification system for React.",
   },
   twitter: {
     card: "summary",
-    title: "Toast — React toast notifications",
+    title: "Toast - React toast notifications",
     description: "A modern, layered toast notification system for React.",
   },
 };

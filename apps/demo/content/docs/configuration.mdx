@@ -32,9 +32,9 @@ import { BellIcon, CircleAlertIcon } from "lucide-react";
 | --- | --- | --- |
 | `position` | `bottom-right` | Stack placement: `top-right`, `top-left`, `bottom-right` or `bottom-left`. |
 | `maxToasts` | `3` | Maximum number of cards visible in a stack. Further notifications wait in the queue. |
-| `defaultOptions` | — | Shared defaults applied to every toast. A per-toast value overrides the matching default. |
+| `defaultOptions` | - | Shared defaults applied to every toast. A per-toast value overrides the matching default. |
 | `iconStyle` | `phosphor` | Ready-made icon set: `phosphor`, `lucide` or `react-icons`. |
-| `icons` | — | Per-variant icon map. It overrides `iconStyle` for the specified variants. |
+| `icons` | - | Per-variant icon map. It overrides `iconStyle` for the specified variants. |
 
 ## Global toast defaults
 
@@ -42,13 +42,13 @@ Set presentation defaults once in `defaultOptions`. A value passed to an individ
 
 | `defaultOptions` field | Built-in default | Description |
 | --- | --- | --- |
-| `description` | — | Secondary text shown under the title. |
-| `className` | — | Tailwind classes merged with the toast card. |
+| `description` | - | Secondary text shown under the title. |
+| `className` | - | Tailwind classes merged with the toast card. |
 | `duration` | `5000` | Auto-dismiss delay in milliseconds. Use `0` to keep a toast open. |
 | `grain` | `false` | Enables the grain texture. |
 | `showCategory` | `true` | Shows the variant label above the title. |
 | `showDescription` | `true` | Shows the description when one exists. |
-| `style` | — | Inline CSS applied to the toast card. |
+| `style` | - | Inline CSS applied to the toast card. |
 | `icon` | selected icon set | One shared icon for every toast from this provider. |
 
 ## Icon configuration

@@ -63,7 +63,7 @@ export default function Home() {
           setGithubStars(repository.stargazers_count);
         }
       })
-      .catch(() => {});
+      .catch(() => { });
 
     return () => {
       isMounted = false;
@@ -150,7 +150,7 @@ export default function Home() {
                   <path d="m12 2.5 2.94 5.96 6.58.96-4.76 4.64 1.12 6.56L12 17.53l-5.88 3.09 1.12-6.56-4.76-4.64 6.58-.96L12 2.5Z" />
                 </svg>
                 <span className="text-slate-200 tabular-nums">
-                  {githubStars?.toLocaleString() ?? "—"}
+                  {githubStars?.toLocaleString() ?? "-"}
                 </span>
               </a>
             </footer>
