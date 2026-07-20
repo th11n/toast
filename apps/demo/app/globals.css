@@ -1,0 +1,103 @@
+@import "tailwindcss";
+@import "fumadocs-ui/css/ocean.css";
+@import "fumadocs-ui/css/preset.css";
+@source "../../../packages/toast/src";
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #050708;
+  color: #f8fafc;
+  font-family: var(--font-figtree), Arial, Helvetica, sans-serif;
+  isolation: isolate;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Docs use the same dark surface and blue light as the landing page. */
+.dark {
+  --color-fd-background: #050708;
+  --color-fd-foreground: #f8fafc;
+  --color-fd-muted: #0c1119;
+  --color-fd-muted-foreground: #8190a8;
+  --color-fd-popover: #0d131c;
+  --color-fd-popover-foreground: #f8fafc;
+  --color-fd-card: rgb(11 16 24 / 0.78);
+  --color-fd-card-foreground: #f8fafc;
+  --color-fd-border: rgb(226 232 240 / 0.09);
+  --color-fd-primary: #bae6fd;
+  --color-fd-primary-foreground: #071019;
+  --color-fd-secondary: #101722;
+  --color-fd-secondary-foreground: #dbeafe;
+  --color-fd-accent: #172334;
+  --color-fd-accent-foreground: #e0f2fe;
+  --color-fd-ring: #7dd3fc;
+  --color-fd-info: #7dd3fc;
+  --color-fd-warning: #fcd34d;
+  --color-fd-error: #fda4af;
+  --color-fd-success: #86efac;
+}
+
+body:has(#nd-docs-layout) {
+  background:
+    radial-gradient(
+      68rem 54rem at -4% 118%,
+      rgb(103 232 249 / 0.28),
+      transparent 72%
+    ),
+    radial-gradient(
+      62rem 50rem at 27% 116%,
+      rgb(14 165 233 / 0.24),
+      transparent 74%
+    ),
+    radial-gradient(
+      56rem 46rem at 56% 114%,
+      rgb(99 102 241 / 0.2),
+      transparent 76%
+    ),
+    #050708;
+  background-attachment: fixed;
+}
+
+body:has(#nd-docs-layout)::before {
+  position: fixed;
+  z-index: 30;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background-image: url("https://www.ui-layouts.com/noise.gif");
+  opacity: 0.02;
+}
+
+#nd-docs-layout {
+  position: relative;
+  z-index: 1;
+}
+
+#nd-docs-layout #nd-sidebar {
+  background: rgb(8 12 18 / 0.72);
+  backdrop-filter: blur(20px);
+}
+
+#nd-docs-layout [data-transparent="false"] {
+  background: rgb(5 7 8 / 0.7);
+}
+
+@media (min-width: 48rem) {
+  #nd-docs-layout,
+  #nd-docs-layout [data-sidebar-placeholder] {
+    --fd-sidebar-width: 11rem !important;
+  }
+
+  #nd-docs-layout #nd-sidebar > div:first-child,
+  #nd-docs-layout [data-radix-scroll-area-viewport] {
+    padding-inline: 0.5rem;
+  }
+}
