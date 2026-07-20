@@ -1,0 +1,106 @@
+---
+title: Configuration
+description: Tune placement, presentation and icons.
+---
+
+## Provider options
+
+```tsx
+import { BellIcon, CircleAlertIcon } from "lucide-react";
+
+<ToastProvider
+  position="bottom-right"
+  maxToasts={3}
+  defaultOptions={{
+    description: "We will keep you updated.",
+    duration: 4500,
+    grain: true,
+    icon: <BellIcon size={18} />,
+    showCategory: false,
+    showDescription: true,
+  }}
+  iconStyle="lucide"
+  icons={{
+    warning: <CircleAlertIcon size={18} />,
+  }}
+>
+  {children}
+</ToastProvider>
+```
+
+| Provider option | Default | Description |
+| --- | --- | --- |
+| `position` | `bottom-right` | Stack placement: `top-right`, `top-left`, `bottom-right` or `bottom-left`. |
+| `maxToasts` | `3` | Maximum number of cards visible in a stack. Further notifications wait in the queue. |
+| `defaultOptions` | — | Shared defaults applied to every toast. A per-toast value overrides the matching default. |
+| `iconStyle` | `phosphor` | Ready-made icon set: `phosphor`, `lucide` or `react-icons`. |
+| `icons` | — | Per-variant icon map. It overrides `iconStyle` for the specified variants. |
+
+## Global toast defaults
+
+Set presentation defaults once in `defaultOptions`. A value passed to an individual toast overrides the matching provider default.
+
+| `defaultOptions` field | Built-in default | Description |
+| --- | --- | --- |
+| `description` | — | Secondary text shown under the title. |
+| `className` | — | Tailwind classes merged with the toast card. |
+| `duration` | `5000` | Auto-dismiss delay in milliseconds. Use `0` to keep a toast open. |
+| `grain` | `false` | Enables the grain texture. |
+| `showCategory` | `true` | Shows the variant label above the title. |
+| `showDescription` | `true` | Shows the description when one exists. |
+| `style` | — | Inline CSS applied to the toast card. |
+| `icon` | selected icon set | One shared icon for every toast from this provider. |
+
+## Icon configuration
+
+Choose one of the built-in, ready-styled icon families with `iconStyle`:
+
+```tsx
+<ToastProvider iconStyle="phosphor">{children}</ToastProvider>
+<ToastProvider iconStyle="lucide">{children}</ToastProvider>
+<ToastProvider iconStyle="react-icons">{children}</ToastProvider>
+```
+
+Use `icons` when each variant needs a specific icon. The map accepts rendered React nodes, so you retain control over custom icon size, weight and styling.
+
+```tsx
+import { CircleCheckIcon, CircleXIcon } from "lucide-react";
+
+<ToastProvider
+  iconStyle="lucide"
+  icons={{
+    success: <CircleCheckIcon size={18} strokeWidth={2} />,
+    error: <CircleXIcon size={18} strokeWidth={2} />,
+  }}
+>
+  {children}
+</ToastProvider>
+```
+
+## Per-toast options
+
+```tsx
+toast.warning("Storage is nearly full", {
+  description: "Remove unused files to continue syncing.",
+  duration: 6000,
+  grain: true,
+  showCategory: false,
+  showDescription: true,
+  icon: <ArchiveWarningIcon size={18} />,
+});
+```
+
+| Per-toast option | Overrides | Description |
+| --- | --- | --- |
+| `description` | `defaultOptions.description` | Secondary text under the title. |
+| `duration` | `defaultOptions.duration` | Auto-dismiss delay in milliseconds; `0` disables it. |
+| `grain` | `defaultOptions.grain` | Adds or removes the grain texture. |
+| `showCategory` | `defaultOptions.showCategory` | Shows or hides the variant label. |
+| `showDescription` | `defaultOptions.showDescription` | Shows or hides the description while retaining its value. |
+| `icon` | `defaultOptions.icon`, `icons[variant]`, `iconStyle` | Overrides the icon for this one toast. |
+
+## Priority
+
+General toast values resolve in this order: built-in defaults → `ToastProvider.defaultOptions` → options passed to `toast.success()`, `toast.info()`, `toast.warning()` or `toast.error()`.
+
+Icons resolve in this order: per-toast `icon` → `defaultOptions.icon` → `icons[variant]` → selected `iconStyle`.
