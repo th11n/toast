@@ -1,0 +1,46 @@
+{
+  "name": "@dominikkrakowiak/toast",
+  "version": "0.1.0",
+  "description": "A React toast component.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "bun build src/index.ts --outdir dist --target browser --format esm --external react --external react-dom --external framer-motion --external @phosphor-icons/react --external lucide-react --external react-icons/hi2 --external tailwind-merge && tsc --emitDeclarationOnly --outDir dist",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "framer-motion": ">=12.0.0",
+    "react": ">=18.2.0",
+    "react-dom": ">=18.2.0"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^16.3.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "framer-motion": "^12.0.0",
+    "jsdom": "^26.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.2.0"
+  },
+  "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
+    "tailwind-merge": "^3.6.0",
+    "lucide-react": "^1.25.0",
+    "react-icons": "^5.7.0"
+  }
+}
