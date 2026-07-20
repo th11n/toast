@@ -10,8 +10,36 @@ const figtree = Figtree({
 });
 
 export const metadata: Metadata = {
-  title: "Toast",
-  description: "A modern, layered toast system for React.",
+  metadataBase: new URL("https://toast.dominikkrakowiak.com"),
+  title: {
+    default: "Toast — React toast notifications",
+    template: "%s | Toast",
+  },
+  description: "A modern, layered toast notification system for React.",
+  applicationName: "Toast",
+  keywords: [
+    "React",
+    "toast notifications",
+    "TypeScript",
+    "Tailwind CSS",
+    "Framer Motion",
+  ],
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: "Toast",
+    title: "Toast — React toast notifications",
+    description: "A modern, layered toast notification system for React.",
+  },
+  twitter: {
+    card: "summary",
+    title: "Toast — React toast notifications",
+    description: "A modern, layered toast notification system for React.",
+  },
 };
 
 export default function RootLayout({
